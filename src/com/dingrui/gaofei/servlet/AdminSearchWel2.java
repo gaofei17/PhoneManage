@@ -43,7 +43,7 @@ public class AdminSearchWel2 extends HttpServlet{
 System.out.println(prob+proc+prom+prou);
 		ManageDAO dao = new ManageDAO();
 		/*分页技术*/
-		int pageSize = 12; //每页显示多少条
+		int pageSize = 22; //每页显示多少条
 		int pageNow = 1;//用户选择的页
 		int rowCount = 0;//总公多少条，从表中查询得到的
 		int pageCount = 0;//有多少页，计算出来的
@@ -70,6 +70,12 @@ System.out.println(prob+proc+prom+prou);
 			pw.println("<head><meta http-equiv='Content-Type' content='text/html; charset=gb2312' />");
 		    pw.println("<title>样机查询结果</title>");
 		    pw.println("<link href='./edit.css' rel='stylesheet' type='text/css'>");
+		    
+		  //引进外部css样式
+		    pw.println("<style type='text/css'>");
+		    pw.println("@import 'mytable.css';");
+		    pw.println("</style>");
+		    
 		    pw.println("</head>");
 			pw.println("<center><body>");
 			pw.println("<div id='container'>");
@@ -78,11 +84,16 @@ System.out.println(prob+proc+prom+prou);
 			pw.println("<div id='Header'>");
 		    pw.println("</div>");
 		    pw.println("<div id='PageBody'>");
-			pw.println("<table border =1 class=tableSty>");
-			pw.println("<tr bgcolor=skyblue><th>ID</th><th>主板</th><th>客户</th><th>型号</th><th>BOM</th><th>FLASH</th><th>CAM</th><th>LCM</th><th>数量</th><th>备注</th><th>样机编号</th><th>责任人</th><th>修改</th><th>删除</th><th>借出日期</th></tr>");
+		    
+		  //更改table样式mytable
+			pw.println("<table  width='1600px' border =0 class=mytable>");
+			//pw.println("<table border =1 class=tableSty>");
+			//修改表头格式
+			pw.println("<tr bgcolor=#F0F0F0><th width='3%'>编号</th><th width='5%'>主板</th><th width='8%'>客户</th><th width='8%'>型号</th><th width='3%'>BOM</th><th width='5%'>FLASH</th><th width='8%'>CAM</th><th width='15%'>LCM</th><th width='3%'>数量</th><th>备注</th><th width='2%'>样机编号</th><th width='5%'>责任人</th><th width='5%'>修改</th><th width='5%'>删除</th><th width='8%'>借出日期</th></tr>");
+			//pw.println("<tr bgcolor=F0F0F0><th>ID</th><th>主板</th><th>客户</th><th>型号</th><th>BOM</th><th>FLASH</th><th>CAM</th><th>LCM</th><th>数量</th><th>备注</th><th>样机编号</th><th>责任人</th><th>修改</th><th>删除</th><th>借出日期</th></tr>");
 			
 			//定义一个颜色数组
-			String[] myCol = {"lightbLue","powderblue"};
+			String[] myCol = {"#E0E0E0","#F0F0F0"};
 			for(int i = 0;i<all.size();i++){
 				
 		        Manage man = all.get(i);
@@ -95,11 +106,14 @@ System.out.println(prob+proc+prom+prou);
 				pw.println("<td>"+man.getMan_bom()+"</td>");
 				pw.println("<td>"+man.getMan_flash()+"</td>");
 				pw.println("<td>"+man.getMan_cam()+"</td>");
-				pw.println("<td>"+man.getMan_lcm()+"</td>");
+				
+				//鼠标放上后可以显示完整内容		
+				pw.println("<td>"+"<a title="+man.getMan_lcm()+">"+man.getMan_lcm()+"<a></td>");
+				//pw.println("<td>"+man.getMan_lcm()+"</td>");
 				pw.println("<td>"+man.getMan_amou()+"</td>");
 				pw.println("<td>"+man.getMan_rem()+"</td>");	
 				pw.println("<td>"+man.getMan_number()+'#'+"</td>");
-				pw.println("<td><font size='6' color='red'>"+man.getMan_user()+"</font></td>");			
+				pw.println("<td>"+man.getMan_user()+"</td>");			
 				//在servlet.xml文件添加URIEncoding="GBK"是为了解决 href 跳转带中文参数时，接收端获取参数出现乱码
 				pw.println("<td><a  href=updateprototype?man_id="+man.getMan_id()+"&man_board="+man.getMan_board()+"&man_client="+man.getMan_client()+"&man_model="+man.getMan_model()+"&man_bom="+man.getMan_bom()+"&man_flash="+man.getMan_flash()+"&man_cam="+man.getMan_cam()+"&man_lcm="+man.getMan_lcm()+"&man_amou="+man.getMan_amou()+"&man_rem="+man.getMan_rem()+"&man_number="+man.getMan_number()+"&man_user="+man.getMan_user()+" >编辑</a></td>");
 				pw.println("<td><a href=deletephone?man_id="+man.getMan_id()+" onclick=\"return window.confirm('您确认要删除该用户吗?')\">删除</a></td>");
