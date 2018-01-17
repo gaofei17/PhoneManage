@@ -112,11 +112,15 @@ System.out.println(prob+proc+prom+prou);
 				pw.println("<td>"+man.getMan_tpinfo()+"</td>");
 				pw.println("<td>"+man.getMan_chipinfo()+"</td>");
 				pw.println("<td>"+man.getMan_efuse()+"</td>");
-				pw.println("<td>"+man.getMan_band()+"</td>");
+				//鼠标放上去显示隐藏内容
+				pw.println("<td>" +"<a title="+man.getMan_band()+">"+man.getMan_band()+"</td>");
+				
 				pw.println("<td>"+man.getMan_regdate()+"</td>");
 				//pw.println("<td>"+man.getMan_lcm()+"</td>");
 				pw.println("<td>"+man.getMan_amou()+"</td>");
-				pw.println("<td>"+man.getMan_rem()+"</td>");	
+				//鼠标放上去显示隐藏内容
+				pw.println("<td>"+"<a title="+man.getMan_rem()+">"+man.getMan_rem()+"</td>");
+				
 				pw.println("<td>"+man.getMan_number()+'#'+"</td>");
 				pw.println("<td>"+man.getMan_user()+"</td>");			
 				//在servlet.xml文件添加URIEncoding="GBK"是为了解决 href 跳转带中文参数时，接收端获取参数出现乱码
