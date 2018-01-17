@@ -54,7 +54,9 @@ public class UpdatePrototype extends HttpServlet{
 				out.println("<form action=updateprototypecl method=get target=new>");
 				
 				out.println("<table border=1>");
+				
 				//disabled='disabled'设置这个属性后，服务器获取不到值 
+				//input在标签内设置禁止输入空格,通过正则表达式解决<input type="text" onkeyup="this.value=this.value.replace(/\s+/g,'')">注意在java代码中\都是以\\表示
 				out.println("<tr>" +
 						"<td>ID:</td>" +
 						"<td><input readonly type=text name=Bor_id value="+req.getParameter("man_id")+" size=60 ></td>" +
@@ -62,71 +64,71 @@ public class UpdatePrototype extends HttpServlet{
 				
 				out.println("<tr>" +
 						"<td>主板:</td>" +
-						"<td><input type=text name=Pro_board value="+req.getParameter("man_board")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_board value="+req.getParameter("man_board")+" size=60 ></td>" +
 						"</tr>");
 
 
 				out.println("<tr>" +
 						"<td>客户:</td>" +
-						"<td><input type=text name=Pro_client value="+req.getParameter("man_client")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_client value="+req.getParameter("man_client")+" size=60 ></td>" +
 						"</tr>");
 
 				
 				out.println("<tr>" +
 						"<td>型号:</td>" +
-						"<td><input type=text name=Pro_model value="+req.getParameter("man_model")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_model value="+req.getParameter("man_model")+" size=60 ></td>" +
 						"</tr>");
 				
 				out.println("<tr>" +
 						"<td>BOM:</td>" +
-						"<td><input  type=text name=Pro_bom value="+req.getParameter("man_bom")+" size=60 ></td>" +
+						"<td><input  type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_bom value="+req.getParameter("man_bom")+" size=60 ></td>" +
 						"</tr>");
 				out.println("<tr>" +
 						"<td>FLASH:</td>" +
-						"<td><input type=text name=Pro_flash value="+req.getParameter("man_flash")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_flash value="+req.getParameter("man_flash")+" size=60 ></td>" +
 						"</tr>");
 				out.println("<tr>" +
 						"<td>CAM:</td>" +
-						"<td><input type=text name=Pro_cam value="+req.getParameter("man_cam")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_cam value="+req.getParameter("man_cam")+" size=60 ></td>" +
 						"</tr>");
 				out.println("<tr>" +
 						"<td>LCM:</td>" +
-						"<td><input type=text name=Pro_lcm value="+req.getParameter("man_lcm")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_lcm value="+req.getParameter("man_lcm")+" size=60 ></td>" +
 						"</tr>");
 				
 				//添加字段
 				out.println("<tr>" +
 						"<td>TP:</td>" +
-						"<td><input type=text name=Pro_tpinfo value="+req.getParameter("man_tpinfo")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_tpinfo value="+req.getParameter("man_tpinfo")+" size=60 ></td>" +
 						"</tr>");
 				out.println("<tr>" +
 						"<td>平台:</td>" +
-						"<td><input type=text name=Pro_chipinfo value="+req.getParameter("man_chipinfo")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_chipinfo value="+req.getParameter("man_chipinfo")+" size=60 ></td>" +
 						"</tr>");
 				out.println("<tr>" +
 						"<td>烧断:</td>" +
-						"<td><input type=text name=Pro_efuse value="+req.getParameter("man_efuse")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_efuse value="+req.getParameter("man_efuse")+" size=60 ></td>" +
 						"</tr>");
 				out.println("<tr>" +
 						"<td>频段:</td>" +
-						"<td><input type=text name=Pro_band value="+req.getParameter("man_band")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_band value="+req.getParameter("man_band")+" size=60 ></td>" +
 						"</tr>");
 				out.println("<tr>" +
 						"<td>收到日期:</td>" +
-						"<td><input type=text name=Pro_regdate value="+req.getParameter("man_regdate")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_regdate value="+req.getParameter("man_regdate")+" size=60 ></td>" +
 						"</tr>");
 				//
 				out.println("<tr>" +
 						"<td>数量:</td>" +
-						"<td><input type=text name=Pro_amou value="+req.getParameter("man_amou")+" size=60 ></td>" +
+						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_amou value="+req.getParameter("man_amou")+" size=60 ></td>" +
 						"</tr>");
 				out.println("<tr>" +
 						"<td>备注:</td>" +
-						"<td><input  type=text name=Pro_rem value="+req.getParameter("man_rem")+" size=60 ></td>" +
+						"<td><input  type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_rem value="+req.getParameter("man_rem")+" size=60 ></td>" +
 						"</tr>");
 				out.println("<tr>" +
 						"<td>样机编号:</td>" +
-						"<td> <input name=Bor_number value="+req.getParameter("man_number")+"  size=60 ></td>" +
+						"<td> <input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Bor_number value="+req.getParameter("man_number")+"  size=60 ></td>" +
 						"</tr>");
 				
 				//把之前责任人打印出现，界面上不做显示，不留痕迹隐藏

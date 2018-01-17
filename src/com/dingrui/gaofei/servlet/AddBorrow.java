@@ -54,74 +54,75 @@ System.out.println("borrowuser="+req.getParameter("Bro_user"));
 					
 					out.println("<table border=1>");
 					
+					//input在标签内设置禁止输入空格,通过正则表达式解决<input type="text" onkeyup="this.value=this.value.replace(/\s+/g,'')">注意在java代码中\都是以\\表示
 					out.println("<tr>" +
 							"<td>主板:</td>" +
-							"<td><input type=text name=Pro_board ></td>" +
+							"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_board ></td>" +
 							"</tr>");
 
 
 					out.println("<tr>" +
 							"<td>客户:</td>" +
-							"<td><input type=text name=Pro_client ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_client ></td>" +
 							"</tr>");
 
 					
 					out.println("<tr>" +
 							"<td>型号:</td>" +
-							"<td><input type=text name=Pro_model ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_model ></td>" +
 							"</tr>");
 					
 					out.println("<tr>" +
 							"<td>BOM:</td>" +
-							"<td><input type=text name=Pro_bom ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_bom ></td>" +
 							"</tr>");
 					out.println("<tr>" +
 							"<td>FLASH:</td>" +
-							"<td><input type=text name=Pro_flash ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_flash ></td>" +
 							"</tr>");
 					out.println("<tr>" +
 							"<td>CAM:</td>" +
-							"<td><input type=text name=Pro_cam ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_cam ></td>" +
 							"</tr>");
 					out.println("<tr>" +
 							"<td>LCM:</td>" +
-							"<td><input type=text name=Pro_lcm ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_lcm ></td>" +
 							"</tr>");
 					
 					//添加新字段
 					out.println("<tr>" +
 							"<td>TP:</td>" +
-							"<td><input type=text name=Pro_tpinfo ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_tpinfo ></td>" +
 							"</tr>");
 					out.println("<tr>" +
 							"<td>平台:</td>" +
-							"<td><input type=text name=Pro_chipinfo ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_chipinfo ></td>" +
 							"</tr>");
 					out.println("<tr>" +
 							"<td>烧断:</td>" +
-							"<td><input type=text name=Pro_efuse ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_efuse ></td>" +
 							"</tr>");
 					out.println("<tr>" +
 							"<td>频段:</td>" +
-							"<td><input type=text name=Pro_band ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_band ></td>" +
 							"</tr>");
 					out.println("<tr>" +
 							"<td>收到日期:</td>" +
-							"<td><input type=text name=Pro_regdate ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_regdate ></td>" +
 							"</tr>");
 					
 					//
 					out.println("<tr>" +
 							"<td>数量:</td>" +
-							"<td><input type=text name=Pro_amou ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_amou ></td>" +
 							"</tr>");
 					out.println("<tr>" +
 							"<td>备注:</td>" +
-							"<td><input type=text name=Pro_rem ></td>" +
+							"<td><input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_rem ></td>" +
 							"</tr>");
 					out.println("<tr>" +
 							"<td>样机编号:</td>" +
-							"<td> <input type=text name=Bor_number ></td>" +
+							"<td> <input type=text  onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Bor_number ></td>" +
 							"</tr>");
 					out.println("<tr><td><font size='6' color='red'>责任人：</font></td><td><select name=Bor_user>");
 					out.println("<option value =''>无</option>");
