@@ -107,15 +107,15 @@ public int checkGrade(User user)
  * @param grade
  * @return boolean
  */
-public boolean addBorrow(String man_board,String man_client,String man_model,String man_bom,String man_flash,String man_cam,String man_lcm,int man_amou ,String man_rem,int man_number,String man_user)
+public boolean addBorrow(String man_board,String man_client,String man_model,String man_bom,String man_flash,String man_cam,String man_lcm,String man_tpinfo,String man_chipinfo,int man_efuse,String man_band,String man_regdate,int man_amou ,String man_rem,int man_number,String man_user)
 {
 	boolean b = false;
 	
-	String sql = "insert into manage(man_board,man_client,man_model, man_bom,man_flash,man_cam,man_lcm,man_amou,man_rem,man_number,man_user,submission) values( ?,?,?,?,?,?,?,?,?,?,?,CURRENT_DATE())";
+	String sql = "insert into manage(man_board,man_client,man_model, man_bom,man_flash,man_cam,man_lcm,man_tpinfo,man_chipinfo,man_efuse,man_band,man_regdate,man_amou,man_rem,man_number,man_user,submission) values( ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,CURRENT_DATE())";
 	
 	System.out.println(sql);
 	
-	int num =dealDateBase.upDate(sql,man_board,man_client,man_model, man_bom,man_flash,man_cam,man_lcm,man_amou,man_rem,man_number,man_user);
+	int num =dealDateBase.upDate(sql,man_board,man_client,man_model, man_bom,man_flash,man_cam,man_lcm,man_tpinfo,man_chipinfo,man_efuse,man_band,man_regdate,man_amou,man_rem,man_number,man_user);
 
 		//int num = mysql_affected_rows();
 	if(num == 1)
@@ -136,13 +136,13 @@ public boolean addBorrow(String man_board,String man_client,String man_model,Str
  * @param grade
  * @return boolean
  */
-public boolean updatePrototype(String pro_board,String pro_client,String pro_model,String pro_bom,String pro_flash,String pro_cam,String pro_lcm,int pro_amou ,String pro_rem,int bor_number,String bor_user,int bor_id)
+public boolean updatePrototype(String pro_board,String pro_client,String pro_model,String pro_bom,String pro_flash,String pro_cam,String pro_lcm,String pro_tpinfo,String pro_chipinfo,int pro_efuse,String pro_band,String pro_regdate,int pro_amou ,String pro_rem,int bor_number,String bor_user,int bor_id)
 {
 	boolean b = false;
 	
-	String sql = "update manage set man_board=?,man_client=?,man_model=?,man_bom=?,man_flash=?,man_cam=?,man_lcm=?,man_amou=?,man_rem=?,man_number=?,man_user=?,submission=CURRENT_DATE() where man_id=?";
+	String sql = "update manage set man_board=?,man_client=?,man_model=?,man_bom=?,man_flash=?,man_cam=?,man_lcm=?,man_tpinfo=?,man_chipinfo=?,man_efuse=?,man_band=?,man_regdate=?,man_amou=?,man_rem=?,man_number=?,man_user=?,submission=CURRENT_DATE() where man_id=?";
 	
-	int num = dealDateBase.upDate(sql,pro_board,pro_client,pro_model,pro_bom,pro_flash,pro_cam,pro_lcm,pro_amou,pro_rem,bor_number,bor_user,bor_id);
+	int num = dealDateBase.upDate(sql,pro_board,pro_client,pro_model,pro_bom,pro_flash,pro_cam,pro_lcm,pro_tpinfo,pro_chipinfo,pro_efuse,pro_band,pro_regdate,pro_amou,pro_rem,bor_number,bor_user,bor_id);
 		
 	if(num == 1)
 	{

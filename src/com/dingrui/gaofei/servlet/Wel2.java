@@ -14,7 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession; 
 
 import com.dingrui.gaofei.bean.Manage;
 import com.dingrui.gaofei.bean.MyComparator;
@@ -164,7 +164,7 @@ public class Wel2 extends HttpServlet{
 			//更改table样式mytable
 			pw.println("<table  width='1600px' border =0 class=mytable>");
 			
-			pw.println("<tr bgcolor=#F0F0F0><th width='3%'>编号</th><th width='5%'>主板</th><th width='8%'>客户</th><th width='8%'>型号</th><th width='3%'>BOM</th><th width='5%'>FLASH</th><th width='8%'>CAM</th><th width='15%'>LCM</th><th width='3%'>数量</th><th>备注</th><th width='2%'>样机编号</th><th width='5%'>责任人</th><th width='8%'>借出日期</th></tr>");
+			pw.println("<tr bgcolor=#F0F0F0><th width='3%'>序号</th><th width='5%'>主板</th><th width='5%'>客户</th><th width='5%'>型号</th><th width='2%'>BOM</th><th width='3%'>FLASH</th><th width='8%'>CAM</th><th width='10%'>LCM</th>   <th width='5%'>TP</th><th width='5%'>平台</th><th width='2%'>烧断</th><th width='5%'>频段</th><th width='7%'>收到日期</th>          <th width='2%'>数量</th><th>备注</th><th width='2%'>编号</th><th width='5%'>责任人</th><th width='7%'>借出日期</th></tr>");
 			
 			//定义一个颜色数组
 			String[] myCol = {"#E0E0E0","#F0F0F0"};
@@ -184,6 +184,12 @@ public class Wel2 extends HttpServlet{
 				//鼠标放上后可以显示完整内容		
 				pw.println("<td>"+"<a title="+man.getMan_lcm()+">"+man.getMan_lcm()+"<a></td>");
 				
+           	//添加新字段
+				pw.println("<td>"+man.getMan_tpinfo()+"</td>");
+				pw.println("<td>"+man.getMan_chipinfo()+"</td>");
+				pw.println("<td>"+man.getMan_efuse()+"</td>");
+				pw.println("<td>"+man.getMan_band()+"</td>");
+				pw.println("<td>"+man.getMan_regdate()+"</td>");
 				//pw.println("<td>"+man.getMan_lcm()+"</td>");
 				pw.println("<td>"+man.getMan_amou()+"</td>");
 				pw.println("<td>"+man.getMan_rem()+"</td>");	

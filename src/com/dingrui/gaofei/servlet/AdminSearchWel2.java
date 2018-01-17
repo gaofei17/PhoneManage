@@ -89,7 +89,7 @@ System.out.println(prob+proc+prom+prou);
 			pw.println("<table  width='1600px' border =0 class=mytable>");
 			//pw.println("<table border =1 class=tableSty>");
 			//修改表头格式
-			pw.println("<tr bgcolor=#F0F0F0><th width='3%'>编号</th><th width='5%'>主板</th><th width='8%'>客户</th><th width='8%'>型号</th><th width='3%'>BOM</th><th width='5%'>FLASH</th><th width='8%'>CAM</th><th width='15%'>LCM</th><th width='3%'>数量</th><th>备注</th><th width='2%'>样机编号</th><th width='5%'>责任人</th><th width='5%'>修改</th><th width='5%'>删除</th><th width='8%'>借出日期</th></tr>");
+			pw.println("<tr bgcolor=#F0F0F0><th width='3%'>序号</th><th width='5%'>主板</th><th width='5%'>客户</th><th width='5%'>型号</th><th width='2%'>BOM</th><th width='3%'>FLASH</th><th width='8%'>CAM</th><th width='10%'>LCM</th> <th width='5%'>TP</th><th width='5%'>平台</th><th width='2%'>烧断</th><th width='5%'>频段</th><th width='7%'>收到日期</th>   <th width='2%'>数量</th><th>备注</th><th width='2%'>编号</th><th width='5%'>责任人</th><th width='3%'>修改</th><th width='3%'>删除</th><th width='7%'>借出日期</th></tr>");
 			//pw.println("<tr bgcolor=F0F0F0><th>ID</th><th>主板</th><th>客户</th><th>型号</th><th>BOM</th><th>FLASH</th><th>CAM</th><th>LCM</th><th>数量</th><th>备注</th><th>样机编号</th><th>责任人</th><th>修改</th><th>删除</th><th>借出日期</th></tr>");
 			
 			//定义一个颜色数组
@@ -109,13 +109,20 @@ System.out.println(prob+proc+prom+prou);
 				
 				//鼠标放上后可以显示完整内容		
 				pw.println("<td>"+"<a title="+man.getMan_lcm()+">"+man.getMan_lcm()+"<a></td>");
-				//pw.println("<td>"+man.getMan_lcm()+"</td>");
+				
+				//添加新字段
+				pw.println("<td>"+man.getMan_tpinfo()+"</td>");
+				pw.println("<td>"+man.getMan_chipinfo()+"</td>");
+				pw.println("<td>"+man.getMan_efuse()+"</td>");
+				pw.println("<td>"+man.getMan_band()+"</td>");
+				pw.println("<td>"+man.getMan_regdate()+"</td>");
+				
 				pw.println("<td>"+man.getMan_amou()+"</td>");
 				pw.println("<td>"+man.getMan_rem()+"</td>");	
 				pw.println("<td>"+man.getMan_number()+'#'+"</td>");
 				pw.println("<td>"+man.getMan_user()+"</td>");			
 				//在servlet.xml文件添加URIEncoding="GBK"是为了解决 href 跳转带中文参数时，接收端获取参数出现乱码
-				pw.println("<td><a  href=updateprototype?man_id="+man.getMan_id()+"&man_board="+man.getMan_board()+"&man_client="+man.getMan_client()+"&man_model="+man.getMan_model()+"&man_bom="+man.getMan_bom()+"&man_flash="+man.getMan_flash()+"&man_cam="+man.getMan_cam()+"&man_lcm="+man.getMan_lcm()+"&man_amou="+man.getMan_amou()+"&man_rem="+man.getMan_rem()+"&man_number="+man.getMan_number()+"&man_user="+man.getMan_user()+" >编辑</a></td>");
+				pw.println("<td><a  href=updateprototype?man_id="+man.getMan_id()+"&man_board="+man.getMan_board()+"&man_client="+man.getMan_client()+"&man_model="+man.getMan_model()+"&man_bom="+man.getMan_bom()+"&man_flash="+man.getMan_flash()+"&man_cam="+man.getMan_cam()+"&man_lcm="+man.getMan_lcm()+"&man_tpinfo="+man.getMan_tpinfo()+ "&man_chipinfo="+ man.getMan_chipinfo()+"&man_efuse="+man.getMan_efuse()+"&man_band="+man.getMan_band()+"&man_regdate="+man.getMan_regdate()+"&man_amou="+man.getMan_amou()+"&man_rem="+man.getMan_rem()+"&man_number="+man.getMan_number()+"&man_user="+man.getMan_user()+" >编辑</a></td>");
 				pw.println("<td><a href=deletephone?man_id="+man.getMan_id()+" onclick=\"return window.confirm('您确认要删除该用户吗?')\">删除</a></td>");
 				//pw.println("<td><a  href=?man_id="+man.getMan_id()+"&man_board="+man.getMan_board()+"&man_client="+man.getMan_client()+"&man_model="+man.getMan_model()+"&man_bom="+man.getMan_bom()+"&man_flash="+man.getMan_flash()+"&man_cam="+man.getMan_cam()+"&man_lcm="+man.getMan_lcm()+"&man_amou="+man.getMan_amou()+"&man_rem="+man.getMan_rem()+"&man_number="+man.getMan_number()+"&man_user="+man.getMan_user()+" >删除</a></td>");
 				pw.println("<td>"+man.getSubmission()+"</td>");

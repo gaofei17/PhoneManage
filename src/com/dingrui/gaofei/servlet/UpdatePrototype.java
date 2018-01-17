@@ -93,6 +93,29 @@ public class UpdatePrototype extends HttpServlet{
 						"<td>LCM:</td>" +
 						"<td><input type=text name=Pro_lcm value="+req.getParameter("man_lcm")+" size=60 ></td>" +
 						"</tr>");
+				
+				//添加字段
+				out.println("<tr>" +
+						"<td>TP:</td>" +
+						"<td><input type=text name=Pro_tpinfo value="+req.getParameter("man_tpinfo")+" size=60 ></td>" +
+						"</tr>");
+				out.println("<tr>" +
+						"<td>平台:</td>" +
+						"<td><input type=text name=Pro_chipinfo value="+req.getParameter("man_chipinfo")+" size=60 ></td>" +
+						"</tr>");
+				out.println("<tr>" +
+						"<td>烧断:</td>" +
+						"<td><input type=text name=Pro_efuse value="+req.getParameter("man_efuse")+" size=60 ></td>" +
+						"</tr>");
+				out.println("<tr>" +
+						"<td>频段:</td>" +
+						"<td><input type=text name=Pro_band value="+req.getParameter("man_band")+" size=60 ></td>" +
+						"</tr>");
+				out.println("<tr>" +
+						"<td>收到日期:</td>" +
+						"<td><input type=text name=Pro_regdate value="+req.getParameter("man_regdate")+" size=60 ></td>" +
+						"</tr>");
+				//
 				out.println("<tr>" +
 						"<td>数量:</td>" +
 						"<td><input type=text name=Pro_amou value="+req.getParameter("man_amou")+" size=60 ></td>" +

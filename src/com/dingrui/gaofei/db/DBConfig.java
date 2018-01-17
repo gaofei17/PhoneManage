@@ -9,6 +9,6 @@ public class DBConfig
 	public static final String DRIVER = "com.mysql.jdbc.Driver";
 	
 	//数据库信息
-	public static final String URL = "jdbc:mysql://localhost:3306/db02?"+"user=root&password=8686886&useUnicode=true&characterEncoding=UTF8";
+	public static final String URL = "jdbc:mysql://localhost:3306/db03?"+"user=root&password=8686886&useUnicode=true&characterEncoding=UTF8";
 	
 }

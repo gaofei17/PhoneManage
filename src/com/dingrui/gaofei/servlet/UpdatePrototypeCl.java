@@ -35,6 +35,14 @@ public class UpdatePrototypeCl extends HttpServlet{
 		String pro_flash   = req.getParameter("Pro_flash").trim();
 		String pro_cam   = req.getParameter("Pro_cam").trim();
 		String pro_lcm   = req.getParameter("Pro_lcm").trim();
+		
+		//添加字段
+				String pro_tpinfo   = req.getParameter("Pro_tpinfo").trim();
+				String pro_chipinfo   = req.getParameter("Pro_chipinfo").trim();
+				int pro_efuse = Integer.parseInt(req.getParameter("Pro_efuse").trim());
+				String pro_band   = req.getParameter("Pro_band").trim();
+				String pro_regdate   = req.getParameter("Pro_regdate").trim();
+		
 		int pro_amou = Integer.parseInt(req.getParameter("Pro_amou").trim());
 		String pro_rem   = req.getParameter("Pro_rem").trim();
 		int bor_number=Integer.parseInt(req.getParameter("Bor_number").trim());
@@ -46,7 +54,7 @@ public class UpdatePrototypeCl extends HttpServlet{
 		System.out.println("new="+bor_user+"old="+old_user);
 		//System.out.println("update="+bor_id +pro_board +pro_client+pro_model +pro_bom+pro_flash +pro_cam+pro_lcm+pro_amou+pro_rem);
 		// 调用UserDAO中的删除用户的方法
-		if (new UserDAO().updatePrototype(pro_board,pro_client,pro_model,pro_bom,pro_flash,pro_cam,pro_lcm,pro_amou,pro_rem,bor_number,bor_user,bor_id))
+		if (new UserDAO().updatePrototype(pro_board,pro_client,pro_model,pro_bom,pro_flash,pro_cam,pro_lcm,pro_tpinfo,pro_chipinfo,pro_efuse,pro_band,pro_regdate,pro_amou,pro_rem,bor_number,bor_user,bor_id))
 		{
 			// 修改成功
 			resp.sendRedirect("ok");

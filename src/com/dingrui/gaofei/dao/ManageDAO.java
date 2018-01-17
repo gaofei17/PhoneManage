@@ -45,11 +45,19 @@ public class ManageDAO {
 							String man_flash = res.getString(6);
 							String man_cam = res.getString(7);
 							String man_lcm = res.getString(8);
-							int man_amou = res.getInt(9);
-							String man_rem = res.getString(10);
-							int man_number = res.getInt(11);
-							String man_user = res.getString(12);
-							String submission =res.getString(13);
+							
+			        	//添加新字段man_tpinfo，man_chipinfo，man_efuse，man_band，man_regdate
+							String man_tpinfo = res.getString(9);
+							String man_chipinfo = res.getString(10);
+							int man_efuse = res.getInt(11);
+							String man_band = res.getString(12);
+							String man_regdate = res.getString(13);
+
+							int man_amou = res.getInt(14);
+							String man_rem = res.getString(15);
+							int man_number = res.getInt(16);
+							String man_user = res.getString(17);
+							String submission =res.getString(18);
 							
 							man.setMan_id(man_id);
 							man.setMan_board(man_board);
@@ -59,6 +67,15 @@ public class ManageDAO {
 							man.setMan_flash(man_flash);
 							man.setMan_cam(man_cam);
 							man.setMan_lcm(man_lcm);
+							
+							//添加新字段man_tpinfo，man_chipinfo，man_efuse，man_band，man_regdate
+							man.setMan_tpinfo(man_tpinfo);
+							man.setMan_chipinfo(man_chipinfo);
+							man.setMan_efuse(man_efuse);
+							man.setMan_band(man_band);
+							man.setMan_regdate(man_regdate);
+							
+							
 							man.setMan_amou(man_amou);
 							man.setMan_rem(man_rem);
 							man.setMan_number(man_number);
@@ -258,11 +275,19 @@ public class ManageDAO {
 							String man_flash = res.getString(6);
 							String man_cam = res.getString(7);
 							String man_lcm = res.getString(8);
-							int man_amou = res.getInt(9);
-							String man_rem = res.getString(10);
-							int man_number = res.getInt(11);
-							String man_user = res.getString(12);
-							String submission =res.getString(13);
+							
+							//添加新字段man_tpinfo，man_chipinfo，man_efuse，man_band，man_regdate
+							String man_tpinfo = res.getString(9);
+							String man_chipinfo = res.getString(10);
+							int man_efuse = res.getInt(11);
+							String man_band = res.getString(12);
+							String man_regdate = res.getString(13);
+							
+							int man_amou = res.getInt(14);
+							String man_rem = res.getString(15);
+							int man_number = res.getInt(16);
+							String man_user = res.getString(17);
+							String submission =res.getString(18);
 							
 							man.setMan_id(man_id);
 							man.setMan_board(man_board);
@@ -272,6 +297,14 @@ public class ManageDAO {
 							man.setMan_flash(man_flash);
 							man.setMan_cam(man_cam);
 							man.setMan_lcm(man_lcm);
+							
+							//添加新字段man_tpinfo，man_chipinfo，man_efuse，man_band，man_regdate
+							man.setMan_tpinfo(man_tpinfo);
+							man.setMan_chipinfo(man_chipinfo);
+							man.setMan_efuse(man_efuse);
+							man.setMan_band(man_band);
+							man.setMan_regdate(man_regdate);
+							
 							man.setMan_amou(man_amou);
 							man.setMan_rem(man_rem);
 							man.setMan_number(man_number);

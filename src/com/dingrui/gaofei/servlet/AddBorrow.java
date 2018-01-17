@@ -87,6 +87,30 @@ System.out.println("borrowuser="+req.getParameter("Bro_user"));
 							"<td>LCM:</td>" +
 							"<td><input type=text name=Pro_lcm ></td>" +
 							"</tr>");
+					
+					//添加新字段
+					out.println("<tr>" +
+							"<td>TP:</td>" +
+							"<td><input type=text name=Pro_tpinfo ></td>" +
+							"</tr>");
+					out.println("<tr>" +
+							"<td>平台:</td>" +
+							"<td><input type=text name=Pro_chipinfo ></td>" +
+							"</tr>");
+					out.println("<tr>" +
+							"<td>烧断:</td>" +
+							"<td><input type=text name=Pro_efuse ></td>" +
+							"</tr>");
+					out.println("<tr>" +
+							"<td>频段:</td>" +
+							"<td><input type=text name=Pro_band ></td>" +
+							"</tr>");
+					out.println("<tr>" +
+							"<td>收到日期:</td>" +
+							"<td><input type=text name=Pro_regdate ></td>" +
+							"</tr>");
+					
+					//
 					out.println("<tr>" +
 							"<td>数量:</td>" +
 							"<td><input type=text name=Pro_amou ></td>" +

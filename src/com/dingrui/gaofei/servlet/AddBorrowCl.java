@@ -29,6 +29,14 @@ public class AddBorrowCl extends HttpServlet{
 		String man_flash   = req.getParameter("Pro_flash").trim();
 		String man_cam   = req.getParameter("Pro_cam").trim();
 		String man_lcm   = req.getParameter("Pro_lcm").trim();
+		
+		//添加字段
+		String man_tpinfo   = req.getParameter("Pro_tpinfo").trim();
+		String man_chipinfo   = req.getParameter("Pro_chipinfo").trim();
+		int man_efuse = Integer.parseInt(req.getParameter("Pro_efuse").trim());
+		String man_band   = req.getParameter("Pro_band").trim();
+		String man_regdate   = req.getParameter("Pro_regdate").trim();
+		
 		int man_amou = Integer.parseInt(req.getParameter("Pro_amou").trim());
 		String man_rem   = req.getParameter("Pro_rem").trim();
 		int man_number =Integer.parseInt(req.getParameter("Bor_number").trim());
@@ -39,7 +47,7 @@ public class AddBorrowCl extends HttpServlet{
 		//int  pro_amou =Integer.parseInt(Strpro_amou);
 
 		// 调用UserDAO中的删除用户的方法
-		if (new UserDAO().addBorrow(man_board,man_client,man_model, man_bom,man_flash,man_cam,man_lcm,man_amou,man_rem,man_number,man_user))
+		if (new UserDAO().addBorrow(man_board,man_client,man_model, man_bom,man_flash,man_cam,man_lcm,man_tpinfo,man_chipinfo,man_efuse,man_band,man_regdate,man_amou,man_rem,man_number,man_user))
 		{
 			// 修改成功
 			resp.sendRedirect("ok");
