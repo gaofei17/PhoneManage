@@ -93,7 +93,7 @@ import com.sun.mail.util.MailSSLSocketFactory;
 	  Calendar now = Calendar.getInstance(); //获取系统时间
 		String time = now.get(Calendar.YEAR)+"-"+(now.get(Calendar.MONTH) + 1) +"-"+ ""+now.get(Calendar.DAY_OF_MONTH)+"^"+now.get(Calendar.HOUR_OF_DAY)+":"+now.get(Calendar.MINUTE)+":"+now.get(Calendar.SECOND);
 	//内容
-	String htmltext= "你所借"+phinf+"样机于"+time+"已归还。谢谢大家的配合！----------------------------------------------------------------------------------------------------------------------------------"+"此邮件由系统自动发出，请勿回复，有疑问请及时沟通谢谢！！！ 此邮件做为样机归还凭证。";
+	String htmltext= "你所借"+phinf+"样机于"+time+"已归还。谢谢大家的配合！----------------------------------------------------------------------------------------------------------------------------------"+"此邮件由样机借出12小时后系统自动发出，请勿回复，有疑问请及时沟通谢谢！！！ 此邮件做为样机归还凭证。";
 	// 邮件的文本
 	message.setContent(htmltext, "text/html;charset=UTF-8");
 	// 返回创建好的邮件对象
