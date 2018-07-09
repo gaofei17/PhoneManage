@@ -99,37 +99,79 @@ System.out.println(prob+proc+prom+prou);
 		        Manage man = all.get(i);
 				
 				pw.println("<tr bgcolor="+myCol[i%2]+">");
-				pw.println("<td>"+man.getMan_id()+"</td>");
-				pw.println("<td>"+man.getMan_board()+"</td>");
-				pw.println("<td>"+man.getMan_client()+"</td>");
-				pw.println("<td>"+man.getMan_model()+"</td>");
-				pw.println("<td>"+man.getMan_bom()+"</td>");
-				pw.println("<td>"+man.getMan_flash()+"</td>");
-				pw.println("<td>"+man.getMan_cam()+"</td>");
 				
-				//鼠标放上后可以显示完整内容		
-				pw.println("<td>"+"<a title="+man.getMan_lcm()+">"+man.getMan_lcm()+"<a></td>");
+//把数量为0的样机，字体颜色设置灰色
+				if(man.getMan_amou() == 1)
+				{
+					pw.println("<td>"+man.getMan_id()+"</td>");
+					pw.println("<td>"+man.getMan_board()+"</td>");
+					pw.println("<td>"+man.getMan_client()+"</td>");
+					pw.println("<td>"+man.getMan_model()+"</td>");
+					pw.println("<td>"+man.getMan_bom()+"</td>");
+					pw.println("<td>"+man.getMan_flash()+"</td>");
+					pw.println("<td>"+man.getMan_cam()+"</td>");
+	             //鼠标放上后可以显示完整内容		
+					pw.println("<td>"+"<a title="+man.getMan_lcm()+">"+man.getMan_lcm()+"<a></td>");
+					
+					//添加新字段
+					pw.println("<td>"+man.getMan_tpinfo()+"</td>");
+					pw.println("<td>"+man.getMan_chipinfo()+"</td>");
+					pw.println("<td>"+man.getMan_efuse()+"</td>");
+					//鼠标放上去显示隐藏内容
+					pw.println("<td>" +"<a title="+man.getMan_band()+">"+man.getMan_band()+"</td>");
+					
+					pw.println("<td>"+man.getMan_regdate()+"</td>");
+					
+				
+					pw.println("<td>"+man.getMan_amou()+"</td>");
+					//鼠标放上去显示隐藏内容
+					pw.println("<td>"+"<a title="+man.getMan_rem()+">"+man.getMan_rem()+"</td>");	
+					
+					pw.println("<td>"+man.getMan_number()+'#'+"</td>");
+					pw.println("<td>"+man.getMan_user()+"</td>");			
+					//在servlet.xml文件添加URIEncoding="GBK"是为了解决 href 跳转带中文参数时，接收端获取参数出现乱码
+					pw.println("<td><a  href=updateprototype?man_id="+man.getMan_id()+"&man_board="+man.getMan_board()+"&man_client="+man.getMan_client()+"&man_model="+man.getMan_model()+"&man_bom="+man.getMan_bom()+"&man_flash="+man.getMan_flash()+"&man_cam="+man.getMan_cam()+"&man_lcm="+man.getMan_lcm()+"&man_tpinfo="+man.getMan_tpinfo()+ "&man_chipinfo="+ man.getMan_chipinfo()+"&man_efuse="+man.getMan_efuse()+"&man_band="+man.getMan_band()+"&man_regdate="+man.getMan_regdate()+"&man_amou="+man.getMan_amou()+"&man_rem="+man.getMan_rem()+"&man_number="+man.getMan_number()+"&man_user="+man.getMan_user()+" >编辑</a></td>");
+					pw.println("<td><a href=deletephone?man_id="+man.getMan_id()+" onclick=\"return window.confirm('您确认要删除该用户吗?')\">删除</a></td>");
+					//pw.println("<td><a  href=?man_id="+man.getMan_id()+"&man_board="+man.getMan_board()+"&man_client="+man.getMan_client()+"&man_model="+man.getMan_model()+"&man_bom="+man.getMan_bom()+"&man_flash="+man.getMan_flash()+"&man_cam="+man.getMan_cam()+"&man_lcm="+man.getMan_lcm()+"&man_amou="+man.getMan_amou()+"&man_rem="+man.getMan_rem()+"&man_number="+man.getMan_number()+"&man_user="+man.getMan_user()+" >删除</a></td>");
+					pw.println("<td>"+man.getSubmission()+"</td>");
+				}else{
+				
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_id()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_board()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_client()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_model()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_bom()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_flash()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_cam()+"</td>");
+             //鼠标放上后可以显示完整内容		
+				pw.println("<td style='color:#CCCCCC'>"+"<a title="+man.getMan_lcm()+">"+man.getMan_lcm()+"<a></td>");
 				
 				//添加新字段
-				pw.println("<td>"+man.getMan_tpinfo()+"</td>");
-				pw.println("<td>"+man.getMan_chipinfo()+"</td>");
-				pw.println("<td>"+man.getMan_efuse()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_tpinfo()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_chipinfo()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_efuse()+"</td>");
 				//鼠标放上去显示隐藏内容
-				pw.println("<td>" +"<a title="+man.getMan_band()+">"+man.getMan_band()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>" +"<a title="+man.getMan_band()+">"+man.getMan_band()+"</td>");
 				
-				pw.println("<td>"+man.getMan_regdate()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_regdate()+"</td>");
 				
-				pw.println("<td>"+man.getMan_amou()+"</td>");
+			
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_amou()+"</td>");
 				//鼠标放上去显示隐藏内容
-				pw.println("<td>"+"<a title="+man.getMan_rem()+">"+man.getMan_rem()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+"<a title="+man.getMan_rem()+">"+man.getMan_rem()+"</td>");	
 				
-				pw.println("<td>"+man.getMan_number()+'#'+"</td>");
-				pw.println("<td>"+man.getMan_user()+"</td>");			
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_number()+'#'+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getMan_user()+"</td>");			
 				//在servlet.xml文件添加URIEncoding="GBK"是为了解决 href 跳转带中文参数时，接收端获取参数出现乱码
 				pw.println("<td><a  href=updateprototype?man_id="+man.getMan_id()+"&man_board="+man.getMan_board()+"&man_client="+man.getMan_client()+"&man_model="+man.getMan_model()+"&man_bom="+man.getMan_bom()+"&man_flash="+man.getMan_flash()+"&man_cam="+man.getMan_cam()+"&man_lcm="+man.getMan_lcm()+"&man_tpinfo="+man.getMan_tpinfo()+ "&man_chipinfo="+ man.getMan_chipinfo()+"&man_efuse="+man.getMan_efuse()+"&man_band="+man.getMan_band()+"&man_regdate="+man.getMan_regdate()+"&man_amou="+man.getMan_amou()+"&man_rem="+man.getMan_rem()+"&man_number="+man.getMan_number()+"&man_user="+man.getMan_user()+" >编辑</a></td>");
 				pw.println("<td><a href=deletephone?man_id="+man.getMan_id()+" onclick=\"return window.confirm('您确认要删除该用户吗?')\">删除</a></td>");
 				//pw.println("<td><a  href=?man_id="+man.getMan_id()+"&man_board="+man.getMan_board()+"&man_client="+man.getMan_client()+"&man_model="+man.getMan_model()+"&man_bom="+man.getMan_bom()+"&man_flash="+man.getMan_flash()+"&man_cam="+man.getMan_cam()+"&man_lcm="+man.getMan_lcm()+"&man_amou="+man.getMan_amou()+"&man_rem="+man.getMan_rem()+"&man_number="+man.getMan_number()+"&man_user="+man.getMan_user()+" >删除</a></td>");
-				pw.println("<td>"+man.getSubmission()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+man.getSubmission()+"</td>");
+				}
+//设置表格字体颜色代码				
+				
+				
+				
 				pw.println("</tr>");
 			}
 			pw.println("</table><br><br>");
