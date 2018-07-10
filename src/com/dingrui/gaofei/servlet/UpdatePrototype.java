@@ -122,6 +122,7 @@ public class UpdatePrototype extends HttpServlet{
 						"<td>ÊýÁ¿:</td>" +
 						"<td><input type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_amou value="+req.getParameter("man_amou")+" size=60 ></td>" +
 						"</tr>");
+
 				out.println("<tr>" +
 						"<td>±¸×¢:</td>" +
 						"<td><input  type=text onkeyup=this.value=this.value.replace(/\\s+/g,'') name=Pro_rem value="+req.getParameter("man_rem")+" size=60 ></td>" +

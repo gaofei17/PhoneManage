@@ -163,7 +163,7 @@ public class Wel extends HttpServlet{
 	       //更改table样式mytable
 			pw.println("<table  width='1600px' border =0 class=mytable>");
 			//修改格式
-			pw.println("<tr bgcolor=#F0F0F0><th width='3%'>序号</th><th width='5%'>主板</th><th width='5%'>客户</th><th width='5%'>型号</th><th width='2%'>BOM</th><th width='3%'>FLASH</th><th width='8%'>CAM</th><th width='10%'>LCM</th>    <th width='5%'>TP</th><th width='5%'>平台</th><th width='2%'>烧断</th><th width='5%'>频段</th><th width='7%'>收到日期</th>  <th width='2%'>数量</th><th>备注</th><th width='2%'>编号</th><th width='5%'>责任人</th><th width='3%'>修改</th><th width='3%'>删除</th><th width='7%'>借出日期</th></tr>");
+			pw.println("<tr bgcolor=#F0F0F0><th width='3%'>序号</th><th width='5%'>主板</th><th width='5%'>客户</th><th width='5%'>型号</th><th width='2%'>BOM</th><th width='3%'>FLASH</th><th width='8%'>CAM</th><th width='10%'>LCM</th>    <th width='5%'>TP</th><th width='5%'>平台</th><th width='2%'>烧断</th><th width='5%'>频段</th><th width='7%'>收到日期</th>  <th width='2%'>库存</th><th>备注</th><th width='2%'>编号</th><th width='5%'>责任人</th><th width='3%'>修改</th><th width='3%'>删除</th><th width='7%'>借出日期</th></tr>");
 			//pw.println("<tr bgcolor=skyblue><th>编号</th><th>主板</th><th>客户</th><th>型号</th><th>BOM</th><th>FLASH</th><th>CAM</th><th>LCM</th><th>数量</th><th>备注</th><th>样机编号</th><th>责任人</th><th>修改</th><th>删除</th><th>借出日期</th></tr>");
 			
 			//定义一个颜色数组
@@ -197,7 +197,7 @@ public class Wel extends HttpServlet{
 					pw.println("<td>"+man.getMan_regdate()+"</td>");
 					
 				
-					pw.println("<td>"+man.getMan_amou()+"</td>");
+					pw.println("<td>"+"有"+"</td>");
 					//鼠标放上去显示隐藏内容
 					pw.println("<td>"+"<a title="+man.getMan_rem()+">"+man.getMan_rem()+"</td>");	
 					
@@ -230,7 +230,7 @@ public class Wel extends HttpServlet{
 				pw.println("<td style='color:#CCCCCC'>"+man.getMan_regdate()+"</td>");
 				
 			
-				pw.println("<td style='color:#CCCCCC'>"+man.getMan_amou()+"</td>");
+				pw.println("<td style='color:#CCCCCC'>"+"无"+"</td>");
 				//鼠标放上去显示隐藏内容
 				pw.println("<td style='color:#CCCCCC'>"+"<a title="+man.getMan_rem()+">"+man.getMan_rem()+"</td>");	
 				
